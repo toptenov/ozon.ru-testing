@@ -14,9 +14,17 @@ class TestProductPage():
         page.open()
         page.is_add_tocart_button_on_product_page()
     
-    def test_product_is_in_cart_after_pressing_add_to_cart_button(self, browser, product_url):
+    def test_one_product_is_in_cart_after_pressing_add_to_cart_button(self, browser, product_url):
         page = ProductPage(browser, product_url)
         page.open()
         page.is_cart_empty()
         page.click_add_product_to_cart_button()
-        page.is_one_product_in_cart()
+        page.is_one_product_in_header_cart_icon()
+        page.is_one_product_in_add_to_cart_form_quantity_of_products_counter()
+
+    def test_one_product_is_in_favorites_after_pressing_add_to_favorites_button(self, browser, product_url):
+        page = ProductPage(browser, product_url)
+        page.open()
+        page.is_favorites_empty()
+        page.click_add_product_to_favorites_button()
+        page.is_one_product_in_header_favorites_icon()
