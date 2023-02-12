@@ -1,7 +1,6 @@
 import pytest
 
 from pages.product_page import ProductPage
-from pages.locators import ProductPageLocators
 
 
 @pytest.mark.parametrize(
